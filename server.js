@@ -1,7 +1,6 @@
 import express from "express";
 import { fileURLToPath } from "url";
 import path from "path";
-console.log("========== ESTE SERVER ESTÁ RODANDO ==========");
 
 //Application environment
 const NODE_ENV = process.env.NODE_ENV?.toLowerCase() || 'production';
@@ -40,6 +39,11 @@ app.get('/organizations', async (req, res) => {
 app.get('/projects', async (req, res) => {
     const title = "Service Projects";
     res.render("projects", { title })
+});
+
+app.get('/categories', async (req, res) => {
+    const title = "Project Categories";
+    res.render("categories", { title })
 });
 
 
